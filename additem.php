@@ -88,9 +88,9 @@ if(isset($_POST['iid'], $_POST['iname'], $_POST['idescription'], $_POST['iprice'
                 $stmt->execute();
                 $resultSet = $stmt->fetchAll();
                 foreach ($resultSet as $row) {
-                    $cId = $row['cid'];
+                    $Id = $row['id'];
                     $cName = $row['cname'];
-                    echo "<option value='$cId'>$cName</option>";
+                    echo "<option value='$Id'>$cName</option>";
                 }
             ?>
             </select><br><br>
