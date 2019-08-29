@@ -9,8 +9,5 @@
         $db["port"],
         $db["user"],
         $db["pass"],
-        ltrim($db["path"], "/")
-        
+        ltrim($db["path"], "/") 
 ));
-   echo "done!!!!!!";
-   ?>
