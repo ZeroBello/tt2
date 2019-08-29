@@ -11,7 +11,6 @@
         break;
                 
         
-    default:
-            echo "Choose product";
+    default:    
     }
 ?>
