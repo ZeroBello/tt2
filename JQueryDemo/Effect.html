@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Demo Effect</title>
+	<!-- tham chieu den thu vien JQuery -->
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="jquery-ui.js"></script>
+	<link rel="stylesheet" type="text/css" href="jquery-ui.js">
+	<script type="text/javascript">
+		$(document).ready(function($){
+			$("#btnRun").click(function(event){
+				//$("#myInfo").slideUp();
+				$("#myInfo").effect("bounce", {}, 1000, callback)
+			});			
+		
+		    $( "#dialog" ).dialog({
+		      autoOpen: false,
+		      show: {
+		        effect: "blind",
+		        duration: 1000
+		      },
+		      hide: {
+		        effect: "explode",
+		        duration: 1000
+		      }
+		    });		 
+		  });
+		function callback(){
+			$( "#dialog" ).dialog("open");
+		}
+
+	</script>
+</head>
+<body>
+	<div id="myInfo">
+		<h1>Hello</h1>
+		<p>HelloHelloHelloHelloHelloHelloHello</p>
+		<p>HelloHelloHelloHelloHelloHelloHello</p>
+	</div>
+	<div id="dialog" title="Basic dialog">
+	  <p>This is an animated dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+	</div>
+	<input type="button" value="Run effect" id="btnRun">
+</body>
+</html>
