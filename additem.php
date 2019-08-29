@@ -81,7 +81,7 @@ if(isset($_POST['iid'], $_POST['iname'], $_POST['idescription'], $_POST['iprice'
 
             <select name="catalogueid">
             <?php
-                $sql = "SELECT cid, cname FROM Catalogue";
+                $sql = "SELECT id, cname FROM Catalogue";
                 $stmt = $pdo->prepare($sql);
                 //Thiết lập kiểu dữ liệu trả về
                 $stmt->setFetchMode(PDO::FETCH_ASSOC);
