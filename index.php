@@ -109,7 +109,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
                                 echo "</a>";
                                 echo "<br>";  
 
-                                echo "Price: ".$iPrice," $";
+                                echo "Price: ".$iprice," $";
                                 echo "<br>";
                             }
                              else 
@@ -128,8 +128,6 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
         ?>        
     </div> 
     <!--End of Product container-->
-
-
 
   <!-- About Section -->
   <div class="w3-container w3-padding-32 w3-center">  
