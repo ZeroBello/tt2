@@ -11,8 +11,7 @@ if (isset($_POST['id'])) {
 ?>
 <?php
     while ($row = mysqli_fetch_array($result)) {
-        $cName = $row[1];
-        $cDescription = $row[2];
+        $cname = $row[1];
         echo "<tr>";
         echo "<td>$cname</td>";
       
