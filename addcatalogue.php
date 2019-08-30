@@ -10,15 +10,11 @@ require_once './database.php';
 
         if($pdoExec)
         {
-            echo 'Data Inserted';
+            echo 'Added successfully';
         }else{
-            echo 'Data Not Inserted';
+            echo 'Added NOT successfully';
         }
     }
-
-        
-        
-
 ?>
 <br>
 

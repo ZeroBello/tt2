@@ -40,9 +40,9 @@ if(isset($_POST['iid'], $_POST['iname'], $_POST['idescription'], $_POST['iprice'
         // check if mysql insert query successful
     if($pdoExec)
     {
-        echo 'Data Inserted';
+        echo 'Added successfully';
     }else{
-        echo 'Data Not Inserted';
+        echo 'Added NOT successfully';
     }
 }
 
