@@ -4,8 +4,7 @@
             <a href="">Manage Catalogue</a>
             <ul>
                 <li><a href="addcatalogue.php">Add Catalogue</a></li>
-                <li><a href="updatecatalogue.php">View/Update catalogue</a></li>
-                <li><a href="deletecatalogue.php">Delete catalogue</a></li>
+                <li><a href="loadcatalogue.php">View/Update/Delete catalogue</a></li>
             </ul>
         </li>
         <li>
