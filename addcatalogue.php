@@ -17,7 +17,7 @@ require_once './database.php';
     }
 ?>
 <br>
-
+<li><a href="index.php">Home Page</a></li>
 <form action = "addcatalogue.php" method = "post">
     <fieldset class = "fitContent">
         <legend>Add Catalogue</legend>
