@@ -1,5 +1,6 @@
 <nav>
     <ul>
+        <li><a href="index.php">Home Page</a></li>
         <li>
             <a href="">Manage Catalogue</a>
             <ul>
@@ -15,6 +16,5 @@
                 <li><a href="updateitem.php">View/Search/Update/Delete item</a></li>
             </ul>
         </li>
-        <li><a href="index.php">Logout</a></li>
     </ul>
 </nav>
