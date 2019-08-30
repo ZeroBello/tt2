@@ -74,7 +74,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
     </div>
     
   <!-- Product container-->  
-    <div class="w3-bottombar">
+  <div class="w3-bar w3-green w3-large"></div>
         <?php 
             include("direction.php");
         ?>
