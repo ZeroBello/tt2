@@ -9,4 +9,22 @@ if (isset($_POST['id'])) {
     die("You've deleted the catalogue '$id' <a href='loadcatalogue.php'>click here</a> to continue.");
 }
 ?>
-
+<?php
+    while ($row = mysqli_fetch_array($result)) {
+        $cName = $row[1];
+        $cDescription = $row[2];
+        echo "<tr>";
+        echo "<td>$cname</td>";
+      
+        ?>
+        <td>
+            <form class="frminline" action="deletecatalogue.php" method="post" onsubmit="return confirmDelete();">
+                <input type="hidden" name="cId" value="<?php echo $row[0] ?>" />
+                <input type="submit" value="Delete" />
+            </form>
+                 </td>
+        <?php
+        echo "</tr>";
+    }
+    ?>
+    
