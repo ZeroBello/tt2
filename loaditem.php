@@ -1,10 +1,9 @@
 <?php
-require_once './header.php';
-require_once './restrictedsession.php';
-$query = "SELECT iId, iName, iDescription, iPrice, iStatus, iSize, iImage FROM Item";
+require_once './database.php';
+$query = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage, catalogueid FROM Item";
 if(isset($_POST['keyword'])){
     $keyword = sanitizeString($_POST['keyword']);
-    $query = $query . " WHERE iName LIKE '%$keyword%' OR iId LIKE '%$keyword%'";
+    $query = $query . " WHERE iname LIKE '%$keyword%' OR iid LIKE '%$keyword%'";
 }
 $result = queryMysql($query);
 $error = $msg = "";
@@ -42,21 +41,21 @@ if (!$result){
         $iSize = $row[5];
         $iImage = $row[6];             
         echo "<tr>";
-        echo "<td>$iId</td>";
-        echo "<td>$iName</td>";
-        echo "<td>$iDescription</td>";
-        echo "<td>$iPrice</td>";
-        echo "<td>$iStatus</td>";
-        echo "<td>$iSize</td>";
+        echo "<td>$iid</td>";
+        echo "<td>$iname</td>";
+        echo "<td>$idescription</td>";
+        echo "<td>$iprice</td>";
+        echo "<td>$istatus</td>";
+        echo "<td>$isize</td>";
         echo "<td ><img src='./images/item/". $iImage . "' height='10%'></td>";
         ?>
         <td>
             <form class="frminline" action="deleteitem.php" method="post" onsubmit="return confirmDelete();">
-                <input type="hidden" name="iId" value="<?php echo $row[0] ?>" />
+                <input type="hidden" name="iid" value="<?php echo $row[0] ?>" />
                 <input type="submit" value="Delete" />
             </form>
             <form class="frminline" action="updateitem.php" method="post">
-                <input type="hidden" name="iId" value="<?php echo $row[0] ?>" />
+                <input type="hidden" name="iid" value="<?php echo $row[0] ?>" />
                 <input type="submit" value="Update" />
             </form>
         </td>

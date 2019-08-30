@@ -1,7 +1,7 @@
  <?php
-require_once 'database.php';
+require_once './database.php';
 $error = $msg = "";
-if (isset($_POST['cName'])) { //updating
+if (isset($_POST['cname'])) { //updating
     $cId = sanitizeString($_POST['id']);
     $cName = sanitizeString($_POST['cname']);
     //
@@ -40,5 +40,6 @@ if (isset($_POST['id'])) {
         <div><?php echo $msg; ?></div>
     </fieldset>
 </form>
+
 </body>
 </html>

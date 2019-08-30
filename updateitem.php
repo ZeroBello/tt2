@@ -1,18 +1,16 @@
 <?php
-require_once './header.php';
-//Check to make sure that user is logged in first
-require_once './restrictedsession.php';
+require_once './database.php';
 $error = $msg = "";
-if (isset($_POST['iName'])) { //updating
-    $iId = sanitizeString($_POST['iId']);
-    $iName = sanitizeString($_POST['iName']);
-    $iDescription = sanitizeString($_POST['iDescription']);
-    $iPrice = sanitizeString($_POST['iPrice']);
-    $iStatus = sanitizeString($_POST['iStatus']);
-    $iSize = sanitizeString($_POST['iSize']);
-    $catalogueId = sanitizeString($_POST['catalogueId']);
-    $uId = $_SESSION['uId'];
-    $query = "UPDATE Item SET iName = '$iName', iDescription = '$iDescription', iPrice = '$iPrice', iStatus = '$iStatus', iSize = '$iSize' WHERE iId = '$iId'";
+if (isset($_POST['iname'])) { //updating
+    $iId = sanitizeString($_POST['iid']);
+    $iName = sanitizeString($_POST['iname']);
+    $iDescription = sanitizeString($_POST['idescription']);
+    $iPrice = sanitizeString($_POST['iprice']);
+    $iStatus = sanitizeString($_POST['istatus']);
+    $iSize = sanitizeString($_POST['isize']);
+    $catalogueId = sanitizeString($_POST['catalogueid']);
+    $uId = $_SESSION['uid'];
+    $query = "UPDATE Item SET iname = '$iname', idescription = '$idescription', iprice = '$iprice', istatus = '$istatus', isize = '$isize' WHERE iid = '$iid'";
     $result = queryMysql($query);
     if (!$result) {
         $error = "Couldn't update item $iName, please try again";
@@ -21,18 +19,18 @@ if (isset($_POST['iName'])) { //updating
     }
 }
 //for loading the data to the form
-if (isset($_POST['iId'])) {
-    $iId = sanitizeString($_POST['iId']);
+if (isset($_POST['iid'])) {
+    $iId = sanitizeString($_POST['iid']);
     //Load the current data to that batch
-    $query = "SELECT iName, iDescription, iPrice, iStatus, iSize FROM Item WHERE iId = '$iId'";
+    $query = "SELECT iname, idescription, iprice, istatus, isize FROM Item WHERE iid = '$iid'";
     $result = queryMysql($query);
     $row = mysqli_fetch_array($result);
     if ($row) {
-        $iName = $row[0];
-        $iDescription = $row[1];
-        $iPrice = $row[2];
-        $iStatus = $row[3];
-        $iSize = $row[4];
+        $iname = $row[0];
+        $idescription = $row[1];
+        $iprice = $row[2];
+        $istatus = $row[3];
+        $isize = $row[4];
     }
 }
 ?>
@@ -41,17 +39,17 @@ if (isset($_POST['iId'])) {
     <fieldset>
         <legend>Update Item</legend>
         <div class="error"><?php echo $error; ?></div>
-        <input type="hidden" value="<?php echo $iId; ?>" name="iId"/>
+        <input type="hidden" value="<?php echo $iid; ?>" name="iid"/>
         Name: </br>
-        <input type="text" id="iName" name="iName" required value="<?php echo $iName; ?>"/><br>
+        <input type="text" id="iname" name="iname" required value="<?php echo $iname; ?>"/><br>
         Description: </br>
-        <input type="text" id="iDescription" name="iDescription" required value="<?php echo $iDescription; ?>"/><br>
+        <input type="text" id="idescription" name="idescription" required value="<?php echo $idescription; ?>"/><br>
         Price: </br>
-        <input type="text"  name="iPrice" required value="<?php echo $iPrice; ?>"/><br>
+        <input type="text"  name="iprice" required value="<?php echo $iprice; ?>"/><br>
         Status: </br>
-        <input type="text"  name="iStatus" required value="<?php echo $iStatus; ?>"/><br>
+        <input type="text"  name="istatus" required value="<?php echo $istatus; ?>"/><br>
         Size: </br>
-        <input type="text"  name="iSize" required value="<?php echo $iSize; ?>"/><br><br>
+        <input type="text"  name="isize" required value="<?php echo $isize; ?>"/><br><br>
         <input type="submit" value="Update"/>
         <div><?php echo $msg; ?></div>
     </fieldset>
