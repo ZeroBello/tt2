@@ -86,7 +86,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) 
             {    
                 echo "<tr>";
-                    for($i=1;$i<=3;$i++)
+                    for($i=1;$i<=4;$i++)
                     {
                         echo "<td align='center' width=600px' height='300px' >";
                             if($row!=false)
