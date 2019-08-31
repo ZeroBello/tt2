@@ -127,7 +127,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
         </div>
         <div class='w3-container w3-row'>
           <div class='w3-half'>
-              <img src='./images/item/". $iImage . "' width='100%'>
+              <img src='./images/item/". $iImage . "' width='70%'>
           </div>
           <div class='w3-half w3-left'>
               <h3>Price: $iPrice $</h3>
