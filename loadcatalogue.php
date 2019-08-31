@@ -31,7 +31,7 @@ if (!$result){
         $cName = $row[1];
         $cDescription = $row[2];
         echo "<tr>";
-        echo "<td>$cname</td>";
+        echo "<td>$cName</td>";
       
         ?>
         <td>
