@@ -79,14 +79,19 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
             include("direction.php");
         ?>
 
-        <?php
-        echo "<table>";
-            foreach ($resultSet as $row) 
+        <?php 
+            include("direction.php");
+        ?>
+
+       <?php
+        echo "<table>";                
+            
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) 
             {    
                 echo "<tr>";
                     for($i=1;$i<=3;$i++)
                     {
-                        echo "<td align='center' float='left' width='500px' height='225px' >";
+                        echo "<td align='center' width='328px' height='228px' >";
                             if($row!=false)
                             {
                                 $iId = $row['iid'];
@@ -96,17 +101,16 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
                                 $iStatus = $row['istatus'];
                                 $iSize = $row['isize'];
                                 $iImage = $row['iimage'];
-
                                 $link_image = "./images/item/$iImage";
                                 //$link_detail="?direct=product_detail&id=".$iId;
 
                                 echo "<a href='$link_detail'>";
-                                    echo "<img src='$link_image' width='200px'>";
+                                echo "<img src='$link_image' width='200px'>";
                                 echo "</a>";
                                 echo "<br>";  
 
-                                echo "<a href='$link_detail'>";
-                                    echo $iName;
+                                
+                                echo $iName;
                                 echo "</a>";
                                 echo "<br>";  
 
@@ -126,7 +130,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
                 echo "</tr>";
             }
         echo "</table>";
-        ?>        
+        ?>
     </div> 
     <!--End of Product container-->
 
