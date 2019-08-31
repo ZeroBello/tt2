@@ -31,23 +31,25 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 <!-- !PAGE CONTENT! -->
 <div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
 
-                 <?php 
+                  <?php 
                     include("catalogue.php");
                 ?>
 
                 <?php
                 echo "<table >";
-                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) 
-                {    
+                
+                    
                     echo "<tr>";
-                        for($i=1;$i<=7;$i++)
+                    foreach ($resultSet as $row)
+                    {
+                        for($i=1;$i<=5;$i++)
                         {
-                            echo "<td width='78px'>";
+                            echo "<th>";
                                 if($row!=false)
                                 {
                                     $ID = $row ['id'];
                                     $link="?direct=show_product&id=".$ID;        
-                                    echo "<a href='$link' class='w3-button w3-green w3-border w3-round-large'>" ;
+                                    echo "<a href='$link' class='w3-button w3-large w3-border'>" ;
                                     $Name = $row ['cname'];                                               
                                     echo "$Name";
                                 }
@@ -55,15 +57,16 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
                                 {
                                     echo "&nbsp;";
                                 }
-                            echo "</td>";
+                            echo "</th>";
 
-                            if($i!=7)
+                            if($i!=5)
                             {
                                 $row = $stmt->fetch();
                             }
                         }
+                    }
                     echo "</tr>";
-                }
+                
                 echo "</table>";
                 ?>
             </div>
@@ -76,19 +79,14 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
             include("direction.php");
         ?>
 
-        <?php 
-            include("direction.php");
-        ?>
-
-       <?php
-        echo "<table>";                
-            
-            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) 
+        <?php
+        echo "<table>";
+            foreach ($resultSet as $row) 
             {    
                 echo "<tr>";
                     for($i=1;$i<=3;$i++)
                     {
-                        echo "<td align='center' width='328px' height='228px' >";
+                        echo "<td align='center' float='left' width='500px' height='225px' >";
                             if($row!=false)
                             {
                                 $iId = $row['iid'];
@@ -98,16 +96,17 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
                                 $iStatus = $row['istatus'];
                                 $iSize = $row['isize'];
                                 $iImage = $row['iimage'];
+
                                 $link_image = "./images/item/$iImage";
                                 //$link_detail="?direct=product_detail&id=".$iId;
 
                                 echo "<a href='$link_detail'>";
-                                echo "<img src='$link_image' width='200px'>";
+                                    echo "<img src='$link_image' width='200px'>";
                                 echo "</a>";
                                 echo "<br>";  
 
-                                
-                                echo $iName;
+                                echo "<a href='$link_detail'>";
+                                    echo $iName;
                                 echo "</a>";
                                 echo "<br>";  
 
@@ -127,7 +126,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
                 echo "</tr>";
             }
         echo "</table>";
-        ?>
+        ?>        
     </div> 
     <!--End of Product container-->
 
