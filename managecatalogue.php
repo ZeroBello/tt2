@@ -9,19 +9,13 @@
     </tr>
     <?php
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        $cId = $row['id'];
+        $Id = $row['id'];
         $cName = $row['cname'];
         echo "<tr>";
-        echo "<td>$cId</td>";
+        echo "<td>$Id</td>";
         
         ?>        
-        <td>
-            <form class="frminline" action="updatecatalogue.php" method="post">
-                <input type="text" name="cname" required value="<?php echo $cName; ?>" />
-                <input type="hidden" name="id" value="<?php echo $row['cid'] ?>" />
-                <input type="submit" value="Update" />
-            </form>
-        </td>
+<li><a href="index.php">Home Page</a></li>
         <td>
             <form class="frminline" action="deletecatalogue.php" method="post" onsubmit="return confirmDelete();">
                 <input type="hidden" name="id" value="<?php echo $row['id'] ?>" />
