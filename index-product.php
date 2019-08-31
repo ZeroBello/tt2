@@ -33,7 +33,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
         <div class="w3-bottombar">
             
             <div class="w3-panel w3-border w3-White w3-round-large w3-padding-16">        
-                <p class="w3-xlarge w3-serif " style="text-decoration: underline " align="middle">TOY_CATALOGUE</p>             
+                <p class="w3-xlarge w3-serif " style="text-decoration: overline underline " align="middle">CATALOGUE</p>             
 
                 <?php 
                     include("catalogue.php");
