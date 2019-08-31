@@ -51,7 +51,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
                                 {
                                     $ID = $row ['id'];
                                     $link="?direct=show_product&id=".$ID;        
-                                    echo "<a href='$link' class='w3-button w3-green w3-border w3-round-large'>" ;
+                                    echo "<a href='$link' class='w3-button w3-large w3-border'>" ;
                                     $Name = $row ['cname'];                                               
                                     echo "$Name";
                                 }
