@@ -101,28 +101,6 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
                                 $link_image = "./images/item/$iImage";
                                 //$link_detail="?direct=product_detail&id=".$iId;
 
-                                echo "<a href='$link_detail'>";
-                                echo "<img src='$link_image' width='200px'>";
-                                echo "</a>";
-                                echo "<br>";  
-
-                                
-                                echo $iName;
-                                echo "</a>";
-                                echo "<br>";  
-
-                                echo "Price: ".$iPrice," $";
-                                echo "<br>";
-                            }
-                             else 
-                            {
-                                echo "&nbsp;";
-                            }
-                        echo "</td>";
-                        if($i!=4)
-                        {
-                            $row = $stmt->fetch();
-                        }
                         echo "<div class='sp w3-quarter w3-card w3-center ' ><div class='w3-orange w3-padding-large'>$iStatus</div><div ><img onclick=\"document.getElementById('$iName').style.display='block'\" id='testimg' src='./images/item/". $iImage . "' width='100%'></div><div class='name'><h3>$iName</h3></div><h3>$iPrice$</h3></div>"
                 . "<!--SHOW MORE INFORMATION-->
   <div id='$iName' class='w3-modal'>
