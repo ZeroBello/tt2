@@ -74,14 +74,13 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
     </div>
     
   <!-- Product container-->  
-  <div class="w3-bar w3-green w3-large"></div>
+    <div class="w3-bottombar">
         <?php 
             include("direction.php");
         ?>
 
         <?php
-     require_once './functions.php';
-     $query = "SELECT iId, iName, iDescription, iPrice, iStatus, iSize, iImage,cName FROM Item,Catalogue ORDER BY cName";
+             $query = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage,cname FROM item,catalogue ORDER BY cname";
      $result = queryMysql($query);
      $error = $msg = "";
      if (!$result){
