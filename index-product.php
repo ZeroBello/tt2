@@ -75,7 +75,37 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
     </div>
     
   <!-- Product container-->  
-  
+    <div class="w3-bottombar">
+        <?php 
+            include("direction.php");
+        ?>
+
+       <?php
+        echo "<table>";                
+            
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) 
+            {    
+                echo "<tr>";
+                    for($i=1;$i<=4;$i++)
+                    {
+                        echo "<td align='center' width=600px' height='300px' >";
+                            if($row!=false)
+                            {
+                                $iId = $row['iid'];
+                                $iName = $row['iname'];
+                                $iDescription = $row['idescription'];
+                                $iPrice = $row['iprice'];
+                                $iStatus = $row['istatus'];
+                                $iSize = $row['isize'];
+                                $iImage = $row['iimage'];
+                                $link_image = "./images/item/$iImage";
+                                //$link_detail="?direct=product_detail&id=".$iId;
+
+                        echo "</td>";
+                        if($i!=4)
+                        {
+                            $row = $stmt->fetch();
+                        }
                         echo "<div class='sp w3-quarter w3-card w3-center ' ><div class='w3-orange w3-padding-large'>$iStatus</div><div ><img onclick=\"document.getElementById('$iName').style.display='block'\" id='testimg' src='./images/item/". $iImage . "' width='100%'></div><div class='name'><h3>$iName</h3></div><h3>$iPrice$</h3></div>"
                 . "<!--SHOW MORE INFORMATION-->
   <div id='$iName' class='w3-modal'>
