@@ -101,6 +101,23 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
                                 $link_image = "./images/item/$iImage";
                                 //$link_detail="?direct=product_detail&id=".$iId;
 
+                                echo "<a href='$link_detail'>";
+                                echo "<img src='$link_image' width='200px'>";
+                                echo "</a>";
+                                echo "<br>";  
+
+                                
+                                echo $iName;
+                                echo "</a>";
+                                echo "<br>";  
+
+                                echo "Price: ".$iPrice," $";
+                                echo "<br>";
+                            }
+                             else 
+                            {
+                                echo "&nbsp;";
+                            }
                         echo "</td>";
                         if($i!=4)
                         {
