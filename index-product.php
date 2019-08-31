@@ -31,25 +31,23 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 <!-- !PAGE CONTENT! -->
 <div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
 
-                  <?php 
+                 <?php 
                     include("catalogue.php");
                 ?>
 
                 <?php
                 echo "<table >";
-                
-                    
+                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) 
+                {    
                     echo "<tr>";
-                    foreach ($resultSet as $row)
-                    {
-                        for($i=1;$i<=5;$i++)
+                        for($i=1;$i<=7;$i++)
                         {
-                            echo "<th>";
+                            echo "<td width='78px'>";
                                 if($row!=false)
                                 {
-                                    $ID = $row ['id'];
+                                    $ID = $row ['cid'];
                                     $link="?direct=show_product&id=".$ID;        
-                                    echo "<a href='$link' class='w3-button w3-large w3-border'>" ;
+                                    echo "<a href='$link' class='w3-button w3-green w3-border w3-round-large'>" ;
                                     $Name = $row ['cname'];                                               
                                     echo "$Name";
                                 }
@@ -57,16 +55,15 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
                                 {
                                     echo "&nbsp;";
                                 }
-                            echo "</th>";
+                            echo "</td>";
 
-                            if($i!=5)
+                            if($i!=7)
                             {
                                 $row = $stmt->fetch();
                             }
                         }
-                    }
                     echo "</tr>";
-                
+                }
                 echo "</table>";
                 ?>
             </div>
