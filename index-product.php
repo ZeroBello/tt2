@@ -86,7 +86,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
                 echo "<tr>";
                     for($i=1;$i<=3;$i++)
                     {
-                        echo "<td align='center' float='left' width='500px' height='225px' >";
+                        echo "<td align='center' float=left' width='500px' height='225px' >";
                             if($row!=false)
                             {
                                 $iId = $row['iid'];
