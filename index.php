@@ -16,7 +16,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
   <a href="javascript:void(0)" onclick="w3_close()"
   class="w3-bar-item w3-button">Close Menu</a>
   <a href="index.php" onclick="w3_close()" class="w3-bar-item w3-button">Home</a>
-  <a href="index-product.php" onclick="w3_close()" class="w3-bar-item w3-button">Product</a>
+  <a href="index-product.php" onclick="w3_close()" class="w3-bar-item w3-button">Catalogue Product</a>
   <a href="admin.php" onclick="w3_close()" class="w3-bar-item w3-button">Admin</a>
   <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button"></a>
 </nav>
