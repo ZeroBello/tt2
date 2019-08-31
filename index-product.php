@@ -32,8 +32,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 <div class="container w3-padding-large" id="portfolio">
         <div class="w3-bottombar">
             
-            <div class="w3-panel w3-border w3-yellow w3-round-large w3-padding-16">        
-                <p class="w3-xlarge w3-serif " style="text-decoration: underline " align="middle">__________________________________CATALOGUE__________________________________</p>             
+            <div class="w3-panel w3-border w3-White w3-round-large w3-padding-16">        
+                <p class="w3-xlarge w3-serif " style="text-decoration: underline " align="middle">______________________________CATALOGUE______________________________</p>             
 
                 <?php 
                     include("catalogue.php");
@@ -44,7 +44,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) 
                 {    
                     echo "<tr>";
-                        for($i=1;$i<=7;$i++)
+                        for($i=1;$i<=5;$i++)
                         {
                             echo "<td width='78px'>";
                                 if($row!=false)
@@ -86,9 +86,9 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) 
             {    
                 echo "<tr>";
-                    for($i=1;$i<=3;$i++)
+                    for($i=1;$i<=5;$i++)
                     {
-                        echo "<td align='center' width='328px' height='228px' >";
+                        echo "<td align='center' width='500px' height='200px' >";
                             if($row!=false)
                             {
                                 $iId = $row['iid'];
