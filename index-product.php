@@ -49,7 +49,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
                             echo "<td width='78px'>";
                                 if($row!=false)
                                 {
-                                    $ID = $row ['cid'];
+                                    $ID = $row ['id'];
                                     $link="?direct=show_product&id=".$ID;        
                                     echo "<a href='$link' class='w3-button w3-green w3-border w3-round-large'>" ;
                                     $Name = $row ['cname'];                                               
