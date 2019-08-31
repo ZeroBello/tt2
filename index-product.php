@@ -49,28 +49,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
                                 {
                                     $ID = $row ['id'];
                                     $link="?direct=show_product&id=".$ID;        
-                                    echo "<div class='sp w3-quarter w3-card w3-center ' ><div class='w3-orange w3-padding-large'>$iStatus</div><div ><img onclick=\"document.getElementById('$iName').style.display='block'\" id='testimg' src='./images/item/". $iImage . "' width='100%'></div><div class='name'><h3>$iName</h3></div><h3>$iPrice$</h3></div>"
-                . "<!--SHOW MORE INFORMATION-->
-  <div id='$iName' class='w3-modal'>
-      <div class='w3-modal-content w3-animate-top w3-card-4'>
-        <div class='w3-container w3-orange w3-center w3-padding-20'> 
-          <span onclick=\"document.getElementById('$iName').style.display='none';\"
-         class='w3-button w3-red w3-xlarge w3-display-topright'>×</span>
-          <h2>$iName</h2>
-        </div>
-        <div class='w3-container w3-row'>
-          <div class='w3-half'>
-              <img src='./images/item/". $iImage . "' width='100%'>
-          </div>
-          <div class='w3-half w3-left'>
-              <h3>Price: $iPrice $</h3>
-              <p>Description: $iDescription.</p>
-              <h4>Size: $iSize</h4>                           
-          </div>                                                    
-        </div>
-        <button class='w3-button w3-Black w3-section' onclick=\"document.getElementById('$iName').style.display='none';\">Back <i class='fa fa-remove'></i></button>
-      </div>
-    </div>";               
+                                    echo "<a href='$link' class='w3-button w3-large w3-border'>" ;
                                     $Name = $row ['cname'];                                               
                                     echo "$Name";
                                 }
@@ -107,7 +86,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
                 echo "<tr>";
                     for($i=1;$i<=3;$i++)
                     {
-                        echo "<td align='center' width='328px' height='228px' >";
+                        
                             if($row!=false)
                             {
                                 $iId = $row['iid'];
