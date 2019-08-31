@@ -62,7 +62,7 @@ th, td {
         <div class="w3-bottombar">
             
             <div class="w3-panel w3-border w3-yellow w3-round-large w3-padding-16">        
-                <p class="w3-xlarge w3-serif " style="text-decoration: underline " align="middle">TOY CATALOGUE</p>             
+                <p class="w3-xlarge w3-serif " style="text-decoration: underline " align="middle">__________________________________CATALOGUE__________________________________</p>             
 
                 
             </div>
