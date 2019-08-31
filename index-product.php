@@ -29,7 +29,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 </div>
   
 <!-- !PAGE CONTENT! -->
- <div class="container w3-padding-large" id="portfolio">
+<div class="container w3-padding-large" id="portfolio">
         <div class="w3-bottombar">
             
             <div class="w3-panel w3-border w3-yellow w3-round-large w3-padding-16">        
@@ -80,17 +80,13 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
             include("direction.php");
         ?>
 
-        <?php 
-            include("direction.php");
-        ?>
-
        <?php
         echo "<table>";                
             
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) 
             {    
                 echo "<tr>";
-                    for($i=1;$i<=5;$i++)
+                    for($i=1;$i<=3;$i++)
                     {
                         echo "<td align='center' width='328px' height='228px' >";
                             if($row!=false)
@@ -131,7 +127,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
                 echo "</tr>";
             }
         echo "</table>";
-        ?>       
+        ?>        
     </div> 
     <!--End of Product container-->
 
